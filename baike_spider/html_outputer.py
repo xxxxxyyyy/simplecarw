@@ -19,7 +19,8 @@ class HtmlOutputer(object):
             fout.write("<tr>")
             fout.write("<td>%s</td>" % data['url'])
             fout.write("<td>%s</td>" % data['title'].encode('utf-8'))
-            fout.write("<td>%s</td>" % data['summary'].encode('utf-8'))
+            if "summary" in data:
+                fout.write("<td>%s</td>" % data['summary'].encode('utf-8'))
             fout.write("</tr>")
         fout.write("<table>")
         fout.write("</body>")

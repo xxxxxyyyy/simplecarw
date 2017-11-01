@@ -22,7 +22,7 @@ class HtmlParser(object):
         res_data['title'] = title_node.get_text()
         
         summary_node = soup.find('div', class_="lemma-summary")
-        if summary_node.get_text():
+        if hasattr(summary_node, "get_text()"):
             res_data['summary'] = summary_node.get_text()
         return res_data
 
